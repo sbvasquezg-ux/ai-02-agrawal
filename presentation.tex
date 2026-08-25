@@ -1,0 +1,97 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage{assets/agrawal-beamer}
+
+\title[Agrawal et al. (2025)]{The Economics of Bicycles for the Mind}
+\subtitle{Herramientas cognitivas, esfuerzo y desigualdad}
+\author{Belén Vásquez}
+\institute{Universidad del Pacífico}
+\date{Agosto de 2026}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+  \vspace{-0.8em}
+  \begin{center}
+    \small \paperref\\[0.45em]
+    \href{\RepoURL}{\texttt{github.com/sbvasquezg-ux/ai-02-agrawal}}
+  \end{center}
+\end{frame}
+
+\begin{frame}{1 \textperiodcentered{} Una cadena de mejoras con tres capacidades}
+  \textbf{Pregunta.} ¿Cómo cambian las herramientas cognitivas el esfuerzo,
+  la productividad y la desigualdad cuando sustituyen implementación pero
+  complementan juicio?
+
+  \medskip
+  \textbf{Mecanismo único.} Encontrar una oportunidad $\to$ intentar
+  implementarla $\to$ continuar si aparece otra.
+
+  \medskip
+  \begin{columns}[T,onlytextwidth]
+    \column{0.62\textwidth}
+    \textbf{Problema condicional en una oportunidad}
+    \[
+      e_t^*(\theta)\in\arg\max_{e_t\ge0}
+      \{\alpha\Delta p(se_t;\theta)-c(e_t;\theta)\}.
+    \]
+    \textbf{FOC interior}
+    \[
+      \alpha\Delta s\,p'(se_t^*;\theta)=c'(e_t^*;\theta).
+    \]
+    \column{0.35\textwidth}
+    \keybox{\small
+      $s$: implementación\\[0.35em]
+      $\alpha$: juicio de resultado\\[0.35em]
+      $\gamma(t)$: juicio de oportunidad
+    }
+  \end{columns}
+
+  \smallskip
+  \footnotesize Elección: $e_t$. Restricción: $e_t\ge0$. Tecnología:
+  $p\in[0,1]$ creciente y cóncava; $c$ creciente y convexa.
+  \sourcefoot{\paperref, secciones 3.1--3.3.}
+\end{frame}
+
+\begin{frame}{2 \textperiodcentered{} Proposición 3 corregida: la U es condicional}
+  \footnotesize
+  Bajo $p(se;\theta)=\sqrt{se+\theta}$, $c(e)=e$; independencia y soporte
+  positivo de $\alpha,\gamma_0,\gamma,s$; $\delta\gamma<1$; momentos finitos;
+  $\operatorname{Var}(\Gamma/s)>0$; y un rango interior común, con
+  $\Gamma=\gamma_0/(1-\delta\gamma)$:
+
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+    \begin{block}{Media}
+      \[
+      \frac{d\mathbb E[V(\theta)]}{d\theta}
+      =\mathbb E[\Gamma]\mathbb E[1/s]>0.
+      \]
+    \end{block}
+    \begin{block}{Umbral de heterogeneidad}
+      Si
+      \[
+      \frac{\mathbb E[\Gamma^2]}{\mathbb E[\Gamma]^2}
+      <\mu_s\mathbb E[1/s],
+      \]
+      entonces $\operatorname{Var}[V(\theta)]$ cae al inicio y es estrictamente
+      convexa.
+    \end{block}
+    \column{0.49\textwidth}
+    \begin{block}{Punto de giro}
+      \[
+      \theta^*=\frac{\Delta^2\mathbb E[\alpha^2]}{4}
+      \frac{\mathbb E[\Gamma]^2\mu_s\mathbb E[1/s]-\mathbb E[\Gamma^2]}
+      {\operatorname{Var}(\Gamma/s)}>0.
+      \]
+      La pendiente es positiva para $\theta>\theta^*$; en $\theta=1$ requiere
+      además $\alert{\theta^*<1}$.
+    \end{block}
+    \keybox{\footnotesize\emph{Intuición.} Al comienzo la herramienta sustituye
+    habilidad de implementación; después amplifica diferencias en juicio de
+    oportunidad.}
+  \end{columns}
+  \sourcefoot{\paperref, Prop. 3 y Apéndice A.3; corrección propia de la ec. (32).}
+\end{frame}
+
+\end{document}

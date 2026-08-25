@@ -1,0 +1,51 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{agrawal-beamer}[2026/08/24 Shared Beamer style]
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{amsmath,amssymb,booktabs}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+
+\usetheme{default}
+\usecolortheme{seahorse}
+\definecolor{AggNavy}{HTML}{263657}
+\definecolor{AggBlue}{HTML}{506A92}
+\definecolor{AggGold}{HTML}{DCA54A}
+\definecolor{AggRed}{HTML}{B64C4C}
+\definecolor{AggPaper}{HTML}{F7F7FA}
+\definecolor{AggInk}{HTML}{1E2430}
+
+\setbeamercolor{normal text}{fg=AggInk,bg=white}
+\setbeamercolor{structure}{fg=AggNavy}
+\setbeamercolor{frametitle}{fg=AggInk,bg=AggBlue!26}
+\setbeamercolor{block title}{fg=white,bg=AggNavy}
+\setbeamercolor{block body}{fg=AggInk,bg=AggBlue!9}
+\setbeamercolor{alerted text}{fg=AggRed}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{subtitle}{size=\large,shape=\itshape}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\color{AggNavy}$\blacktriangleright$}
+\setbeamertemplate{itemize subitem}{\color{AggBlue}$\bullet$}
+\setbeamertemplate{enumerate item}{\color{AggNavy}\insertenumlabel.}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{frametitle}{\vspace{0.15em}\hspace{0.2em}\insertframetitle\strut}
+\setbeamertemplate{footline}{%
+  \leavevmode\hbox{%
+  \begin{beamercolorbox}[wd=.84\paperwidth,ht=2.6ex,dp=1.2ex,leftskip=1em]{author in head/foot}%
+    \color{AggBlue}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.16\paperwidth,ht=2.6ex,dp=1.2ex,center]{date in head/foot}%
+    \color{AggNavy}\insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}}
+\setbeamersize{text margin left=0.72cm,text margin right=0.72cm}
+\hypersetup{colorlinks=true,urlcolor=AggBlue,linkcolor=AggNavy}
+
+\newcommand{\paperref}{Agrawal, Gans \& Goldfarb (2025), NBER WP 34034}
+\newcommand{\RepoURL}{https://github.com/sbvasquezg-ux/ai-02-agrawal}
+\newcommand{\sourcefoot}[1]{\vfill{\tiny\color{gray}Fuente: #1}}
+\newcommand{\keybox}[1]{\begin{beamercolorbox}[rounded=true,sep=0.7em]{block body}#1\end{beamercolorbox}}
