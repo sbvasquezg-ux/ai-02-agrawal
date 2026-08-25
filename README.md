@@ -35,35 +35,35 @@ El paper formaliza un único mecanismo: una **cadena de mejoras iterativas**. En
 
 La heterogeneidad tiene tres dimensiones:
 
-- (s): **habilidad de implementación**;
-- (alpha): **juicio de resultado**, para reconocer y capturar el valor de una mejora;
-- (gamma(t)): **juicio de oportunidad**, para encontrar la siguiente mejora.
+- $s$: **habilidad de implementación**;
+- $\alpha$: **juicio de resultado**, para reconocer y capturar el valor de una mejora;
+- $\gamma(t)$: **juicio de oportunidad**, para encontrar la siguiente mejora.
 
 ## Problema del agente
 
-Condicional en haber encontrado una oportunidad, la única elección es (e_t\ge0):
+Condicional en haber encontrado una oportunidad, la única elección es $e_t\ge0$:
 
 $$
-e_t^*(\theta)\in\arg\max_{e_t\ge0}
-\left\{M(e_t;\theta)=\alpha\Delta p(se_t;\theta)-c(e_t;\theta)\right\}.
+e_{t}^{*}(\theta)\in\arg\max_{e_t\ge0}
+\bigl[\alpha\Delta p(se_t;\theta)-c(e_t;\theta)\bigr].
 $$
 
-(p\in[0,1]) es creciente y cóncava; (c) es creciente y convexa. En una solución interior:
+$p\in[0,1]$ es creciente y cóncava; $c$ es creciente y convexa. En una solución interior:
 
 $$
-\alpha\Delta s\,p'(se_t^*;\theta)=c'(e_t^*;\theta).
+\alpha\Delta s\,p'(se_{t}^{*};\theta)=c'(e_{t}^{*};\theta).
 $$
 
 El valor total suma el beneficio óptimo sobre la secuencia descontada de oportunidades:
 
 $$
 V_0(\theta)=\sum_{t\ge0}
-\left(\prod_{i=0}^{t}\gamma(i)\right)\delta^tM(e_t^*(\theta);\theta).
+\left(\prod_{i=0}^{t}\gamma(i)\right)\delta^tM(e_{t}^{*}(\theta);\theta).
 $$
 
 ## Proposiciones 1 y 2
 
-**Proposición 1.** Una herramienta cognitiva eleva (p) y/o reduce (c), y hace caer estrictamente la razón marginal (p'/c') cuando mejora (	heta). Bajo una solución óptima bien definida, el esfuerzo cae, es constante entre rondas idénticas y la calidad esperada total aumenta.
+**Proposición 1.** Una herramienta cognitiva eleva $p$ y/o reduce $c$, y hace caer estrictamente la razón marginal $p'/c'$ cuando mejora $\theta$. Bajo una solución óptima bien definida, el esfuerzo cae, es constante entre rondas idénticas y la calidad esperada total aumenta.
 
 **Proposición 2.** La ganancia de adopción es el beneficio adicional por ronda multiplicado por
 
@@ -71,15 +71,15 @@ $$
 \Gamma=\sum_{t\ge0}\left(\prod_{i=0}^{t}\gamma(i)\right)\delta^t.
 $$
 
-Por eso el valor de la herramienta aumenta con el juicio de oportunidad, aumenta con (alpha) solo si eleva la probabilidad de éxito realizada, disminuye con (s) bajo una sustitución suficientemente fuerte y pondera más las oportunidades tempranas. Las dos últimas comparativas requieren cautelas adicionales, documentadas en [`extensions.md`](extensions.md).
+Por eso el valor de la herramienta aumenta con el juicio de oportunidad, aumenta con $\alpha$ solo si eleva la probabilidad de éxito realizada, disminuye con $s$ bajo una sustitución suficientemente fuerte y pondera más las oportunidades tempranas. Las dos últimas comparativas requieren cautelas adicionales, documentadas en [`extensions.md`](extensions.md).
 
 ## Proposición 3, corregida
 
-El objeto es la **varianza transversal** de productividad o salario, (operatorname{Var}[V(\theta)]), y la estática comparativa es respecto de la calidad continua de la herramienta (	heta), no “la varianza de la IA”.
+El objeto es la **varianza transversal** de productividad o salario, $\mathrm{Var}[V(\theta)]$, y la estática comparativa es respecto de la calidad continua de la herramienta $\theta$, no “la varianza de la IA”.
 
-Bajo la tecnología especializada (p(se;\theta)=\sqrt{se+\theta}), (c(e)=e); independencia y soporte positivo de (alpha,gamma_0,gamma,s); (deltagamma<1); momentos finitos; (operatorname{Var}(\Gamma/s)>0); y un rango común donde todos permanecen en la solución interior:
+Bajo la tecnología especializada $p(se;\theta)=\sqrt{se+\theta}$, $c(e)=e$; independencia y soporte positivo de $\alpha,\gamma_0,\gamma,s$; $\delta\gamma<1$; momentos finitos; $\mathrm{Var}(\Gamma/s)>0$; y un rango común donde todos permanecen en la solución interior:
 
-- la media (mathbb E[V(\theta)]) aumenta con (	heta);
+- la media $\mathbb E[V(\theta)]$ aumenta con $\theta$;
 - si
 
 $$
@@ -88,19 +88,19 @@ $$
 \qquad \Gamma=\frac{\gamma_0}{1-\delta\gamma},
 $$
 
-  entonces (operatorname{Var}[V(\theta)]) es estrictamente convexa, cae al inicio y alcanza un mínimo único (	heta^*>0), antes de aumentar;
-- afirmar pendiente positiva **específicamente en (	heta=1)** requiere además (	heta^*<1). Esta condición falta en la ecuación (32) del paper.
+  entonces $\mathrm{Var}[V(\theta)]$ es estrictamente convexa, cae al inicio y alcanza un mínimo único $\theta^*>0$, antes de aumentar;
+- afirmar pendiente positiva **específicamente en $\theta=1$** requiere además $\theta^*<1$. Esta condición falta en la ecuación (32) del paper.
 
 El beneficio individual de adopción es otro objeto:
 
 $$
 V_i(\theta)-V_i(0)=\theta\Gamma_i/s_i,
 \qquad
-\operatorname{Var}[V(\theta)-V(0)]
-=\theta^2\operatorname{Var}(\Gamma/s),
+\mathrm{Var}[V(\theta)-V(0)]
+=\theta^2\mathrm{Var}(\Gamma/s).
 $$
 
-de modo que su varianza aumenta monótonamente para (	heta>0).
+de modo que su varianza aumenta monótonamente para $\theta>0$.
 
 ## Reproducción
 
@@ -111,7 +111,7 @@ lualatex presentation.tex
 lualatex extra/presentation-long.tex
 ```
 
-`sim.py` verifica simbólicamente la solución interior y la derivada de la varianza, reproduce un contraejemplo con (	heta^*\approx1.7007), y regenera [`variance-comparison.pdf`](extra/figures/variance-comparison.pdf) y [`variance-comparison.png`](extra/figures/variance-comparison.png).
+`sim.py` verifica simbólicamente la solución interior y la derivada de la varianza, reproduce un contraejemplo con $\theta^*\approx1.7007$, y regenera [`variance-comparison.pdf`](extra/figures/variance-comparison.pdf) y [`variance-comparison.png`](extra/figures/variance-comparison.png).
 
 ## Estructura
 
