@@ -53,45 +53,30 @@
   \sourcefoot{\paperref, secciones 3.1--3.3.}
 \end{frame}
 
-\begin{frame}{2 \textperiodcentered{} Proposición 3 corregida: la U es condicional}
+\begin{frame}{2 \textperiodcentered{} Las tres proposiciones: resultados}
   \footnotesize
-  Bajo $p(se;\theta)=\sqrt{se+\theta}$, $c(e)=e$; independencia y soporte
-  positivo de $\alpha,\gamma_0,\gamma,s$; $\delta\gamma<1$; momentos finitos;
-  $\operatorname{Var}(\Gamma/s)>0$; y un rango interior común, con
-  $\Gamma=\gamma_0/(1-\delta\gamma)$:
+  \begin{block}{Proposición 1 \textperiodcentered{} Esfuerzo y productividad}
+    Al adoptar la herramienta, el esfuerzo óptimo cae en cada ronda,
+    $e_t^*(1)<e_t^*(0)$; es igual entre rondas tecnológicamente idénticas; y el
+    valor esperado total aumenta, $V_0(1)>V_0(0)$.
+  \end{block}
 
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-    \begin{block}{Media}
-      \[
-      \frac{d\mathbb E[V(\theta)]}{d\theta}
-      =\mathbb E[\Gamma]\mathbb E[1/s]>0.
-      \]
-    \end{block}
-    \begin{block}{Umbral de heterogeneidad}
-      Si
-      \[
-      \frac{\mathbb E[\Gamma^2]}{\mathbb E[\Gamma]^2}
-      <\mu_s\mathbb E[1/s],
-      \]
-      entonces $\operatorname{Var}[V(\theta)]$ cae al inicio y es estrictamente
-      convexa.
-    \end{block}
-    \column{0.49\textwidth}
-    \begin{block}{Punto de giro}
-      \[
-      \theta^*=\frac{\Delta^2\mathbb E[\alpha^2]}{4}
-      \frac{\mathbb E[\Gamma]^2\mu_s\mathbb E[1/s]-\mathbb E[\Gamma^2]}
-      {\operatorname{Var}(\Gamma/s)}>0.
-      \]
-      La pendiente es positiva para $\theta>\theta^*$; en $\theta=1$ requiere
-      además $\alert{\theta^*<1}$.
-    \end{block}
-    \keybox{\footnotesize\emph{Intuición.} Al comienzo la herramienta sustituye
-    habilidad de implementación; después amplifica diferencias en juicio de
-    oportunidad.}
-  \end{columns}
-  \sourcefoot{\paperref, Prop. 3 y Apéndice A.3; corrección propia de la ec. (32).}
+  \begin{block}{Proposición 2 \textperiodcentered{} Quién gana más con la adopción}
+    La ganancia aumenta con el juicio de oportunidad; aumenta con $\alpha$ si la
+    adopción eleva la probabilidad de éxito realizada; disminuye con $s$ bajo
+    sustitución suficientemente fuerte; y pesa más cuando la oportunidad llega
+    temprano. Las dos últimas comparativas requieren las cautelas de la auditoría.
+  \end{block}
+
+  \begin{block}{Proposición 3 corregida \textperiodcentered{} Media y desigualdad}
+    Bajo la tecnología especializada, independencia, $\delta\gamma<1$, momentos
+    finitos y un rango interior común, $\mathbb E[V(\theta)]$ aumenta. Si además
+    $\operatorname{Var}(\Gamma/s)>0$ y
+    $\mathbb E[\Gamma^2]/\mathbb E[\Gamma]^2<\mu_s\mathbb E[1/s]$, la varianza
+    transversal $\operatorname{Var}[V(\theta)]$ es convexa: cae hasta $\theta^*$
+    y sube después; que ya suba en $\theta=1$ exige $\alert{\theta^*<1}$.
+  \end{block}
+  \sourcefoot{\paperref, Proposiciones 1--3 y apéndices; correcciones propias.}
 \end{frame}
 
 \end{document}
