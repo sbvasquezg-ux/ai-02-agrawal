@@ -79,4 +79,57 @@
   \sourcefoot{\paperref, Proposiciones 1--3 y apéndices; correcciones propias.}
 \end{frame}
 
+\begin{frame}{3 \textperiodcentered{} Qué verifiqué a mano y por qué}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.57\textwidth}
+    \small
+    \begin{block}{De la suma general a la ecuación (23)}
+      Partí de la ecuación (21). Por la Proposición 1,
+      $e_t^*(\theta)=e^*(\theta)$; además,
+      $\gamma(0)=\gamma_0$ y $\gamma(t)=\gamma$ para $t\ge1$. Entonces
+      \[
+        \begin{aligned}
+        V_0(\theta)
+          &=\gamma_0M(e^*(\theta);\theta)
+            \sum_{t=0}^{\infty}(\delta\gamma)^t\\
+          &=\frac{\gamma_0M(e^*(\theta);\theta)}{1-\delta\gamma},
+            \qquad \delta\gamma<1.
+        \end{aligned}
+      \]
+    \end{block}
+    \keybox{\small Elegí esta parte porque sostiene la Proposición 1, reaparece
+    en la 2 y ofrece una prueba autocontenida, sin imponer formas específicas
+    para $p(\cdot)$ o $c(\cdot)$.}
+
+    \column{0.39\textwidth}
+    \begin{center}
+      \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{hand/manual-verification.png}
+      \par\scriptsize Verificación manual de la ecuación (23).
+    \end{center}
+  \end{columns}
+  \sourcefoot{Elaboración propia a partir de \paperref, ecuaciones (21) y (23).}
+\end{frame}
+
+\begin{frame}{4 \textperiodcentered{} Qué nos dice esta derivación}
+  \begin{block}{Interpretación económica}
+    \[
+      V_0(\theta)
+      =\underbrace{\gamma_0M(e^*(\theta);\theta)}_{\text{beneficio de la oportunidad inicial}}
+      \times
+      \underbrace{\frac{1}{1-\delta\gamma}}_{\text{repetición futura}}.
+    \]
+  \end{block}
+
+  \begin{block}{Su rol en el paper}
+    Es el bloque base para estudiar cómo la adopción de la herramienta afecta
+    la productividad: la Proposición 1 pregunta si sube el valor esperado; la 2,
+    qué factores amplifican la ganancia; y la 3, cómo cambia la varianza entre
+    trabajadores.
+  \end{block}
+
+  \keybox{\textbf{Veredicto.} La forma cerrada queda confirmada por la serie
+  geométrica: no es un resultado inventado por la IA.}
+  \sourcefoot{Verificación manual propia; \paperref, ecuaciones (21) y (23).}
+\end{frame}
+
 \end{document}
